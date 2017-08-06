@@ -1,0 +1,324 @@
+parameters:
+    # Guzzle
+    m12u.sdk.sierra.iot_m2m.client.class: GuzzleHttp\Client
+    # Clients
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.applications.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\System\Applications
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.communication.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\System\Communication
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.data.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\System\Data
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.lifecyle.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\System\Lifecycle
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.messages.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\System\Messages
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.other_operations.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\System\OtherOperations
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.system.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\System\System
+    m12u.sdk.sierra.iot_m2m.proxy.operations.label.label.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\Label\Label
+    m12u.sdk.sierra.iot_m2m.proxy.admin.company.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Administration\Company
+    # Client Exceptions
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.missing.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayMissingException
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.missing.identifiers.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayMissingIdentifiersException
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.not.unique.identifiers.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayNotUniqueIdentifiersException
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.imei.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayInvalidImeiException
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.esn.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayInvalidEsnException
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.meid.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayInvalidMeidException
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.mac.address.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayInvalidMacAddressException
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.unknown.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayUnknownException
+    m12u.sdk.sierra.iot_m2m.client.exception.application.missing.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\ApplicationMissingException
+    m12u.sdk.sierra.iot_m2m.client.exception.application.unknown.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\ApplicationUnknownException
+    m12u.sdk.sierra.iot_m2m.client.exception.system.missing.fields.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SystemMissingFieldsException
+    m12u.sdk.sierra.iot_m2m.client.exception.application.not.unique.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\ApplicationNotUniqueException
+    m12u.sdk.sierra.iot_m2m.client.exception.applications.protocol.conflicts.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\ApplicationsProtocolConflictsException
+    m12u.sdk.sierra.iot_m2m.client.exception.system.applications.type.not.unique.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SystemApplicationsTypeNotUniqueException
+    m12u.sdk.sierra.iot_m2m.client.exception.system.communication.identifier.already.used.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SystemCommunicationIdentifierAlreadyUsedException
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.assigned.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SubscriptionAssignedException
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.missing.identifier.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SubscriptionMissingIdentifierException
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.missing.operator.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SubscriptionMissingOperatorException
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.operator.and.operator.account.incompatible.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SubscriptionOperatorAndOperatorAccountIncompatibleException
+    m12u.sdk.sierra.iot_m2m.client.exception.operator.account.unknown.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\OperatorAccountUnknownException
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.assigned.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayAssignedException
+    m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.m3da.registration.password.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SystemInvalidM3daRegistrationPasswordException
+    m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.m3da.password.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SystemInvalidM3daPasswordException
+    m12u.sdk.sierra.iot_m2m.client.exception.system.limit.exceeded.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SystemLimitExceededException
+    m12u.sdk.sierra.iot_m2m.client.exception.system.unknown.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SystemUnknownException
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.being.transferred.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayBeingTransferredException
+    m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.state.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SystemInvalidStateException
+    m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.data.param.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SystemInvalidDataParamException
+    m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.timerange.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SystemInvalidTimerangeException
+    m12u.sdk.sierra.iot_m2m.client.exception.aggregation.too.many.data.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\AggregationTooManyDataException
+    m12u.sdk.sierra.iot_m2m.client.exception.aggregation.too.many.targets.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\AggregationTooManyTargetsException
+    m12u.sdk.sierra.iot_m2m.client.exception.aggregation.invalid.multiplier.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\AggregationInvalidMultiplierException
+    m12u.sdk.sierra.iot_m2m.client.exception.aggregation.invalid.timescale.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\AggregationInvalidTimescaleException
+    m12u.sdk.sierra.iot_m2m.client.exception.invalid.timerange.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\InvalidTimerangeException
+    m12u.sdk.sierra.iot_m2m.client.exception.dataset.unknown.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\DatasetUnknownException
+    m12u.sdk.sierra.iot_m2m.client.exception.dataset.or.data.missing.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\DatasetOrDataMissingException
+    m12u.sdk.sierra.iot_m2m.client.exception.file.unreadable.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\FileUnreadableException
+    m12u.sdk.sierra.iot_m2m.client.exception.file.header.missing.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\FileHeaderMissingException
+    m12u.sdk.sierra.iot_m2m.client.exception.csv.header.unknown.column.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\CsvHeaderUnknownColumnException
+    m12u.sdk.sierra.iot_m2m.client.exception.file.missing.data.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\FileMissingDataException
+    m12u.sdk.sierra.iot_m2m.client.exception.file.too.large.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\FileTooLargeException
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.bytes.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\OperationSystemImportUsagesMissingBytesException
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.bytes.total.mismatch.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\OperationSystemImportUsagesBytesTotalMismatchException
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.duration.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\OperationSystemImportUsagesMissingDurationException
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.phonenumber.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\OperationSystemImportUsagesMissingPhonenumberException
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.subscription.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\OperationSystemImportUsagesMissingSubscriptionException
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.already.exist.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\OperationSystemImportUsagesAlreadyExistException
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.unknown.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SubscriptionUnknownException
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.not.unique.identifiers.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\SubscriptionNotUniqueIdentifiersException
+
+services:
+    m12u.sdk.sierra.iot_m2m.client:
+        class: '%m12u.sdk.sierra.iot_m2m.client.class%'
+        arguments:
+            - {'base_uri' : '%m12u.sdk.sierra.iot_m2m.config.base_uri%'}
+
+    # Clients
+    m12u.sdk.sierra.iot_m2m.proxy.admin.company.class
+        class: '%m12u.sdk.sierra.iot_m2m.proxy.admin.company.class%'
+        calls:
+            - ['setClient', ['@m12u.sdk.sierra.iot_m2m.client']]
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.proxy, alias: 'admin.company' }
+
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.system:
+        class: '%m12u.sdk.sierra.iot_m2m.proxy.operations.system.system.class%'
+        calls:
+            - ['setClient', ['@m12u.sdk.sierra.iot_m2m.client']]
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.proxy, alias: 'operations.system.system' }
+
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.lifecyle:
+        class: '%m12u.sdk.sierra.iot_m2m.proxy.operations.system.lifecyle.class%'
+        calls:
+            - ['setClient', ['@m12u.sdk.sierra.iot_m2m.client']]
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.proxy, alias: 'operations.system.lifecyle' }
+
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.applications:
+        class: '%m12u.sdk.sierra.iot_m2m.proxy.operations.system.applications.class%'
+        calls:
+            - ['setClient', ['@m12u.sdk.sierra.iot_m2m.client']]
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.proxy, alias: 'operations.system.applications' }
+
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.data:
+        class: '%m12u.sdk.sierra.iot_m2m.proxy.operations.system.data.class%'
+        calls:
+            - ['setClient', ['@m12u.sdk.sierra.iot_m2m.client']]
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.proxy, alias: 'operations.system.data' }
+
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.communication:
+        class: '%m12u.sdk.sierra.iot_m2m.proxy.operations.system.communication.class%'
+        calls:
+            - ['setClient', ['@m12u.sdk.sierra.iot_m2m.client']]
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.proxy, alias: 'operations.system.communication' }
+
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.messages:
+        class: '%m12u.sdk.sierra.iot_m2m.proxy.operations.system.messages.class%'
+        calls:
+            - ['setClient', ['@m12u.sdk.sierra.iot_m2m.client']]
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.proxy, alias: 'operations.system.messages' }
+
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.other_operations:
+        class: '%m12u.sdk.sierra.iot_m2m.proxy.operations.system.other_operations.class%'
+        calls:
+            - ['setClient', ['@m12u.sdk.sierra.iot_m2m.client']]
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.proxy, alias: 'operations.system.other_operations' }
+
+    # Client Exceptions
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.missing:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.gateway.missing.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'gateway.missing' }
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.missing.identifiers:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.gateway.missing.identifiers.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'gateway.missing.identifiers' }
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.not.unique.identifiers:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.gateway.not.unique.identifiers.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'gateway.not.unique.identifiers' }
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.imei:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.imei.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'gateway.invalid.imei' }
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.esn:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.esn.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'gateway.invalid.esn' }
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.meid:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.meid.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'gateway.invalid.meid' }
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.mac.address:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.gateway.invalid.mac.address.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'gateway.invalid.mac.address' }
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.unknown:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.gateway.unknown.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'gateway.unknown' }
+    m12u.sdk.sierra.iot_m2m.client.exception.application.missing:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.application.missing.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'application.missing' }
+    m12u.sdk.sierra.iot_m2m.client.exception.application.unknown:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.application.unknown.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'application.unknown' }
+    m12u.sdk.sierra.iot_m2m.client.exception.system.missing.fields:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.system.missing.fields.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'system.missing.fields' }
+    m12u.sdk.sierra.iot_m2m.client.exception.application.not.unique:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.application.not.unique.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'application.not.unique' }
+    m12u.sdk.sierra.iot_m2m.client.exception.applications.protocol.conflicts:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.applications.protocol.conflicts.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'applications.protocol.conflicts' }
+    m12u.sdk.sierra.iot_m2m.client.exception.system.applications.type.not.unique:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.system.applications.type.not.unique.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'system.applications.type.not.unique' }
+    m12u.sdk.sierra.iot_m2m.client.exception.system.communication.identifier.already.used:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.system.communication.identifier.already.used.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'system.communication.identifier.already.used' }
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.assigned:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.subscription.assigned.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'subscription.assigned' }
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.missing.identifier:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.subscription.missing.identifier.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'subscription.missing.identifier' }
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.missing.operator:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.subscription.missing.operator.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'subscription.missing.operator' }
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.operator.and.operator.account.incompatible:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.subscription.operator.and.operator.account.incompatible.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'subscription.operator.and.operator.account.incompatible' }
+    m12u.sdk.sierra.iot_m2m.client.exception.operator.account.unknown:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.operator.account.unknown.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'operator.account.unknown' }
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.assigned:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.gateway.assigned.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'gateway.assigned' }
+    m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.m3da.registration.password:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.m3da.registration.password.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'system.invalid.m3da.registration.password' }
+    m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.m3da.password:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.m3da.password.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'system.invalid.m3da.password' }
+    m12u.sdk.sierra.iot_m2m.client.exception.system.limit.exceeded:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.system.limit.exceeded.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'system.limit.exceeded' }
+    m12u.sdk.sierra.iot_m2m.client.exception.system.unknown:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.system.unknown.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'system.unknown' }
+    m12u.sdk.sierra.iot_m2m.client.exception.gateway.being.transferred:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.gateway.being.transferred.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'gateway.being.transferred' }
+    m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.state:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.state.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'system.invalid.state' }
+    m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.data.param:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.data.param.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'system.invalid.data.param' }
+    m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.timerange:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.system.invalid.timerange.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'system.invalid.timerange' }
+    m12u.sdk.sierra.iot_m2m.client.exception.aggregation.too.many.data:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.aggregation.too.many.data.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'aggregation.too.many.data' }
+    m12u.sdk.sierra.iot_m2m.client.exception.aggregation.too.many.targets:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.aggregation.too.many.targets.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'aggregation.too.many.targets' }
+    m12u.sdk.sierra.iot_m2m.client.exception.aggregation.invalid.multiplier:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.aggregation.invalid.multiplier.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'aggregation.invalid.multiplier' }
+    m12u.sdk.sierra.iot_m2m.client.exception.aggregation.invalid.timescale:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.aggregation.invalid.timescale.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'aggregation.invalid.timescale' }
+    m12u.sdk.sierra.iot_m2m.client.exception.invalid.timerange:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.invalid.timerange.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'invalid.timerange' }
+    m12u.sdk.sierra.iot_m2m.client.exception.dataset.unknown:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.dataset.unknown.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'dataset.unknown' }
+    m12u.sdk.sierra.iot_m2m.client.exception.dataset.or.data.missing:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.dataset.or.data.missing.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'dataset.or.data.missing' }
+    m12u.sdk.sierra.iot_m2m.client.exception.file.unreadable:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.file.unreadable.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'file.unreadable' }
+    m12u.sdk.sierra.iot_m2m.client.exception.file.header.missing:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.file.header.missing.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'file.header.missing' }
+    m12u.sdk.sierra.iot_m2m.client.exception.csv.header.unknown.column:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.csv.header.unknown.column.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'csv.header.unknown.column' }
+    m12u.sdk.sierra.iot_m2m.client.exception.file.missing.data:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.file.missing.data.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'file.missing.data' }
+    m12u.sdk.sierra.iot_m2m.client.exception.file.too.large:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.file.too.large.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'file.too.large' }
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.bytes:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.bytes.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'operation.system.import.usages.missing.bytes' }
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.bytes.total.mismatch:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.bytes.total.mismatch.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'operation.system.import.usages.bytes.total.mismatch' }
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.duration:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.duration.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'operation.system.import.usages.missing.duration' }
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.phonenumber:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.phonenumber.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'operation.system.import.usages.missing.phonenumber' }
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.subscription:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.missing.subscription.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'operation.system.import.usages.missing.subscription' }
+    m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.already.exist:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.operation.system.import.usages.already.exist.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'operation.system.import.usages.already.exist' }
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.unknown:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.subscription.unknown.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'subscription.unknown' }
+    m12u.sdk.sierra.iot_m2m.client.exception.subscription.not.unique.identifiers:
+        class: '%m12u.sdk.sierra.iot_m2m.client.exception.subscription.not.unique.identifiers.class%'
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.client.exception, alias: 'subscription.not.unique.identifiers' }

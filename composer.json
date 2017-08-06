@@ -1,0 +1,28 @@
+{
+  "name": "dodev34/sdk-sierra-iot-m2m-bundle",
+  "description": "Airvantage PHP SDK. Manage your SIM cards effectively, carry out remote analysis and reduce costs. Starter-kits available for trials.",
+  "authors": [
+    {
+      "name": "Michel Dourneau #m12u",
+      "email": "contact@michel-dourneau.fr"
+    }
+  ],
+  "version": "1.0.0",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "M12U\\Bundle\\Sdk\\Sierra\\IotM2MBundle\\": ""
+    }
+  },
+  "require": {
+    "php": ">=5.3.0",
+    "psr/log": "~1.0",
+    "guzzlehttp/guzzle": "^6.2"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0"
+    }
+  }
+}
