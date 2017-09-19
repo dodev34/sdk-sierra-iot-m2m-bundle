@@ -10,6 +10,7 @@ parameters:
     m12u.sdk.sierra.iot_m2m.proxy.operations.system.other_operations.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\System\OtherOperations
     m12u.sdk.sierra.iot_m2m.proxy.operations.system.system.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\System\System
     m12u.sdk.sierra.iot_m2m.proxy.operations.label.label.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\Label\Label
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.operation.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Operations\System\Operation
     m12u.sdk.sierra.iot_m2m.proxy.admin.company.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Administration\Company
     # Client Exceptions
     m12u.sdk.sierra.iot_m2m.client.exception.gateway.missing.class: M12U\Bundle\Sdk\Sierra\IotM2MBundle\Client\Exception\GatewayMissingException
@@ -69,7 +70,15 @@ services:
             - {'base_uri' : '%m12u.sdk.sierra.iot_m2m.config.base_uri%'}
 
     # Clients
-    m12u.sdk.sierra.iot_m2m.proxy.admin.company.class
+    m12u.sdk.sierra.iot_m2m.proxy.operations.system.operation:
+        class: '%m12u.sdk.sierra.iot_m2m.proxy.operations.system.operation.class%'
+        calls:
+            - ['setClient', ['@m12u.sdk.sierra.iot_m2m.client']]
+        tags:
+            - { name: m12u.sdk.sierra.iot_m2m.proxy, alias: 'operations.system.operation' }
+
+
+    m12u.sdk.sierra.iot_m2m.proxy.admin.company.class:
         class: '%m12u.sdk.sierra.iot_m2m.proxy.admin.company.class%'
         calls:
             - ['setClient', ['@m12u.sdk.sierra.iot_m2m.client']]

@@ -14,7 +14,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Class M12USierraAdministrationComapnyDetailsCommand
  * @package M12U\Bundle\Sdk\Sierra\IotM2MBundle\Command
  */
-class M12USierraAdministrationComapnyDetailsCommand extends ContainerAwareCommand
+class M12USierraAdministrationComapnyEditCommand extends ContainerAwareCommand
 {
     /**
      * {@inheritdoc}
