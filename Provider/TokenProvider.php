@@ -1,6 +1,8 @@
 <?php
 
 namespace M12U\Bundle\Sdk\Sierra\IotM2MBundle\Provider;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class TokenProvider
@@ -96,16 +98,15 @@ class TokenProvider implements TokenProviderInterface
      */
     public function getToken()
     {
-        $now = time();
         $token = null;
-
         if (! $this->hasToken()) {
             $token = $this->getFirstToken();
         } else {
             $token = $this->retrieve();
         }
 
-        if ($this->tokenIsExpire($now, $token->expires_in)) {
+
+        if ($this->tokenIsExpire($token)) {
             $token = $this->getRefreshToken($token->refresh_token);
         }
 
@@ -139,17 +140,20 @@ class TokenProvider implements TokenProviderInterface
     }
 
     /**
-     * @param int $now
-     * @param int $expiresIn
+     * @param $token
      * @return bool
      */
-    protected function tokenIsExpire($now, $expiresIn)
+    protected function tokenIsExpire($token)
     {
+        $timezone = new DateTimeZone("+00:00");
+        $expiresIn = new DateTime(sprintf('@%s', $token->expires_in));
+        $now = new DateTime(null, $timezone);
+
         if ($now >= $expiresIn) {
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     /**
@@ -165,9 +169,7 @@ class TokenProvider implements TokenProviderInterface
             'client_secret' => $this->clientSecret,
         ];
 
-        $now = time();
         $token =  $this->getContent($http_build_query);
-        $token->expires_in = $now + (int)$token->expires_in;
 
         return $token;
     }
@@ -185,9 +187,8 @@ class TokenProvider implements TokenProviderInterface
             'client_secret' => $this->clientSecret,
         ];
 
-        $now = time();
         $token =  $this->getContent($http_build_query);
-        $token->expires_in = $now + (int)$token->expires_in;
+        $token->expires_in = time()+(int)$token->expires_in;
 
         return $token;
     }
