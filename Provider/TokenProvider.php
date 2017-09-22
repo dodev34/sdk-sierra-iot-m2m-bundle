@@ -1,6 +1,8 @@
 <?php
 
 namespace M12U\Bundle\Sdk\Sierra\IotM2MBundle\Provider;
+
+use RuntimeException;
 use DateTime;
 use DateTimeZone;
 
@@ -105,12 +107,9 @@ class TokenProvider implements TokenProviderInterface
             $token = $this->retrieve();
         }
 
-
         if ($this->tokenIsExpire($token)) {
             $token = $this->getRefreshToken($token->refresh_token);
         }
-
-        $this->store($token);
 
         return $token->access_token;
     }
@@ -120,6 +119,7 @@ class TokenProvider implements TokenProviderInterface
      */
     public function store($token)
     {
+        $token->expires_in = time()+(int)$token->expires_in;
         $this->tokenStorage->store($token);
     }
 
@@ -170,6 +170,7 @@ class TokenProvider implements TokenProviderInterface
         ];
 
         $token =  $this->getContent($http_build_query);
+        $this->store($token);
 
         return $token;
     }
@@ -188,13 +189,13 @@ class TokenProvider implements TokenProviderInterface
         ];
 
         $token =  $this->getContent($http_build_query);
-        $token->expires_in = time()+(int)$token->expires_in;
+        $this->store($token);
 
         return $token;
     }
 
     /**
-     * @throws \RuntimeException if Unabled to retrieve first token with getContent
+     * @throws RuntimeException if Unabled to retrieve first token with getContent
      * @param array $data
      * @return \stdClass {"access_token":"xx","token_type":"Bearer","refresh_token":"xx","expires_in":86399}
      */
@@ -203,7 +204,7 @@ class TokenProvider implements TokenProviderInterface
         $requestUri = http_build_query($data);
         $tokenUrl = sprintf("%s?%s", $this->uriOauthToken, $requestUri);
         if (! $token = file_get_contents($tokenUrl)) {
-            throw new \RuntimeException(
+            throw new RuntimeException(
                 "Unabled to retrieve first token with getContent");
         }
 
