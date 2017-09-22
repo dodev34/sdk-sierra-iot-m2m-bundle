@@ -119,7 +119,7 @@ class TokenProvider implements TokenProviderInterface
      */
     public function store($token)
     {
-        $token->expires_in = time()+(int)$token->expires_in;
+        $token->expires_at = time()+(int)$token->expires_in;
         $this->tokenStorage->store($token);
     }
 
@@ -146,10 +146,10 @@ class TokenProvider implements TokenProviderInterface
     protected function tokenIsExpire($token)
     {
         $timezone = new DateTimeZone("+00:00");
-        $expiresIn = new DateTime(sprintf('@%s', $token->expires_in));
+        $expiresAt = new DateTime(sprintf('@%s', $token->expires_at));
         $now = new DateTime(null, $timezone);
 
-        if ($now >= $expiresIn) {
+        if ($now >= $expiresAt) {
             return true;
         }
 
