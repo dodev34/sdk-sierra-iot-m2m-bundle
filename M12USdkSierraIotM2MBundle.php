@@ -31,7 +31,7 @@ class M12USdkSierraIotM2MBundle extends Bundle
                 'm12u.sdk.sierra.iot_m2m.provider.token_storage',
                 '%m12u.sdk.sierra.iot_m2m.provider.token_storage.class%'
             )
-            ->addArgument(new Parameter('kernel.cache_dir'))
+            ->addArgument('%kernel.cache_dir%')
         ;
 
         $container->setParameter(
@@ -44,12 +44,12 @@ class M12USdkSierraIotM2MBundle extends Bundle
                 '%m12u.sdk.sierra.iot_m2m.provider.token.class%'
             )
             ->setArguments([
-                new Parameter('m12u.sdk.sierra.iot_m2m.config.uri_oauth_token'),
-                new Parameter('m12u.sdk.sierra.iot_m2m.config.client_secret'),
-                new Parameter('m12u.sdk.sierra.iot_m2m.config.client_id'),
-                new Parameter('m12u.sdk.sierra.iot_m2m.config.username'),
-                new Parameter('m12u.sdk.sierra.iot_m2m.config.password'),
-                new Parameter('m12u.sdk.sierra.iot_m2m.config.grant_type'),
+                '%m12u.sdk.sierra.iot_m2m.config.uri_oauth_token%',
+                '%m12u.sdk.sierra.iot_m2m.config.client_secret%',
+                '%m12u.sdk.sierra.iot_m2m.config.client_id%',
+                '%m12u.sdk.sierra.iot_m2m.config.username%',
+                '%m12u.sdk.sierra.iot_m2m.config.password%',
+                '%m12u.sdk.sierra.iot_m2m.config.grant_type%',
             ])
         ->addMethodCall(
             'setTokenStorage',
